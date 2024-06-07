@@ -1,4 +1,4 @@
-This is a real time earthquake alert system using an ESP8266 microcontroller and a vibration sensor. The system is integrated with a website built with HTML and CSS, which displays real-time data on vibration status and intensity. 
+This is a simple real time earthquake alert system using an ESP8266 microcontroller and a vibration sensor. The system is integrated with a website built with HTML and CSS, which displays real-time data on vibration status and intensity. 
 This data is collected via Firebase, which connects the Arduino code with the web interface. 
 Each vibration event triggers the creation of a new table on the website, indicating the earthquake alert and its intensity.
 <br>
