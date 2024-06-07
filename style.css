@@ -1,0 +1,40 @@
+
+body {
+    background: #ddf1e9;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 20px;
+    
+    text-align: center;
+}
+img{
+border-radius: 8px;
+padding: 5px;
+max-width:auto;
+width:800px;
+height:200;
+}
+table {
+
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+
+}
+
+th {
+font-family: Arial;
+font-size: 20px;
+background: #666;
+color: #FFF;
+padding: 2px 4px;
+border-collapse: separate;
+border: 3px solid #000;
+}
+
+td {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px;
+text-align: center;
+border: 2px solid #000;
+}

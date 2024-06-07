@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
+     <title> earthquake</title>
+     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+
+</head>
+
+<body >
+
+<img src="earthquake.jpg"width="1300" height="250">
+
+<br>
+<h1> Update of eartquake</h1>
+<table cellspacing="2" cellpadding="3">
+<thead> 
+        <th>ID</th> 
+        <th>Status</th> 
+        <th>Vibration</th> 
+      </thead>
+
+      <tbody id="tbody1">
+        
+      </tbody>
+</table>
+
+
+
+<script type ="module">
+
+
+  
+  const firebaseConfig = {
+
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "https://earthquakedata-89740-default-rtdb.firebaseio.com",
+    projectId: "earthquakedata-89740",
+    storageBucket: "earthquakedata-89740.appspot.com",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+
+  };
+
+
+  // Initialize Firebase
+
+  firebase.initializeApp(firebaseConfig);
+
+  function AddItems(id,mes,v)
+{
+  var tbody = document.getElementById('tbody1');
+  var trow = document.createElement('tr');
+  var td1 = document.createElement('td');
+  var td2 = document.createElement('td');
+  var td3 = document.createElement('td');
+  td1.innerHTML= id;
+  td2.innerHTML= mes;
+  
+  td3.innerHTML= v;
+
+  trow.appendChild(td1);trow.appendChild(td2);trow.appendChild(td3);
+  tbody.appendChild(trow);
+
+}
+  
+ 
+function selectAllData()
+{
+  var database = firebase.database();
+ var fref = database.ref().child('update');
+  fref.once("value").then(
+  function(snapshot){
+    snapshot.forEach(
+      function(ChildSnapshot){
+        const id= ChildSnapshot.val().id;
+        const mes= ChildSnapshot.val().message;
+        const v= ChildSnapshot.val().vibration;
+        
+        console.log(id);
+        AddItems(id,mes,v);
+      }
+      
+    );
+    const ig = snapshot.val();
+  console.log(ig);
+
+  });
+}
+  window.onload = selectAllData();
+
+
+
+
+</script>
+
+</body>
+</html>
