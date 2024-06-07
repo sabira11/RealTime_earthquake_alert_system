@@ -8,11 +8,10 @@ The main feature of this project:
   <li>implementation of an IoT-based earthquake alert system using ESP8266 and a vibration sensor, integrating real-time data collection and alert functionality.</li>
    <li>Programmed the ESP8266 using the Arduino IDE</li>
   <li>a responsive web interface using HTML and CSS to display real-time vibration status and intensity.</li>
-  <li>a dynamic tables on the webpagee that automatically update with new earthquake alerts and intensity readings</li>
+  <li>a dynamic tables on the webpage that automatically update with new earthquake alerts and intensity readings</li>
    <li>Collection of real time data via firebase and dynamically displayed it on a webpage</li>
 </ul> 
 <h2>Hardware Requirements:</h2>
-<br>
 <ul>
 <li>project board</li>
 <li>ESP8266 wifi module</li>
